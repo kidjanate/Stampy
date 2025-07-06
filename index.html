@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+</head>
+<body>
+    <main class="container">
+        <h1>โปรแกรมเพิ่ม comment code สำหรับส่งงานอาจารย์</h1>
+        <p>เน้นใช้งานไม่เน้นสวย</p>
+        <div class="grid">
+            <input type="text" id="name" placeholder="ชื่อ-นามสกุล">
+            <input type="text" id="nickname" placeholder="ชื่อเล่น">
+        </div>
+        <input type="number" id="studentCode" placeholder="รหัสนักศึกษา (XXXXXXXXX)">
+        <div class="grid">
+            <input type="number" id="subjectCode" placeholder="รหัสวิชา (204XXX)">
+            <input type="text" id="workCode" placeholder="ชื่องาน (HW_XX)">
+            <input type="text" id="sec" placeholder="เซค (0XX)">
+        </div>
+        <select id="commentType" aria-label="ประเภท comment">
+            <option disabled>ประเภท comment</option>
+            <option selected >Python3</option>
+            <option>Code.org</option>
+        </select>
+        <p>ตัวอย่าง comment code</p>
+        <textarea id="output" readonly style="min-height: 190px; overflow: hidden;"></textarea>
+        <input type="checkbox" role="switch" id="multipleFiles">หลายไฟล์
+        <input type="file" id="file" webkitdirectory>
+        <details open>
+            <summary>รายละเอียดไฟล์ที่เลือก</summary>
+            <ul id="filesDetail"></ul>
+        </details>
+        <button id="download">Download</button>
+    </main>
+    <dialog id="finishUI">
+        <article>
+            <h2>ไฟล์กำลังดาวน์โหลด</h2>
+            <p>
+            ขอบคุณที่ใช้งานงับ
+            </p>
+            <footer>
+            <button class="center" onclick="document.getElementById('finishUI').removeAttribute('open')">Confirm</button>
+            </footer>
+        </article>
+    </dialog>
+    <footer></footer>
+</body>
+<script type="module" src="lib.js"></script>
+<script type="module" src="index.js"></script>
+</html>
